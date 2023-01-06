@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS</title>
+    <link rel ="stylesheet" href ="css/CRUD.css">
+    <link rel="stylesheet"  href ="css/all.min.css">
+
+</head>
+<body>
+
+<div class="container">
+    <!-- start toggle dark mode -->
+    <div class="dark-mode">
+        <i class="fas fa-moon"></i>
+    </div>
+    <div class="box-mode">
+        <p class="Light"><i class="fas fa-sun"></i>Light</p>
+        <p class="dark"><i class="fas fa-moon "></i>Dark</p>
+      
+    </div>
+    <!-- end toggle dark mode -->
+    <div class="title">
+        <h1>Manage System</h1>
+        <P>Create . Read . Delete . Update Elments </P>
+    </div>
+
+    <div class="inputs">
+        <input id="title" type="text" placeholder="title">
+       
+        <div class="price">
+            <input onkeyup="getTotal()"onkeypress='return restrictAlphabets(event)' id="pricee" type="text" placeholder="Price">
+
+            <input onkeyup="getTotal()"onkeypress='return restrictAlphabets(event)' id="taxes" type="text" placeholder="Taxes">
+
+            <input onkeyup="getTotal()"onkeypress='return restrictAlphabets(event)' id="Ads"   type="text" placeholder="Ads">
+
+            <input onkeyup="getTotal()"onkeypress='return restrictAlphabets(event)' id="discount" type="text" placeholder="discount">
+
+            <small id="total"></small>
+        </div>
+        <input id="Count" type="text" onkeypress='return restrictAlphabets(event)' placeholder="Count">
+        <input id="Category" type="text" placeholder="Category">
+        <button onclick="ctreateItem()" class="create">Create</button>
+    </div>
+    <div class="outputs">
+        <input onkeydown = "search (this.value)" id = "search" type="text"placeholder="Search">
+
+        <div class="btnSearch">
+        <button  onclick = "selectSearch (this.id)" id = "searchTitle">SearchByTitle</button>
+        <button onclick = " selectSearch (this.id)" id = "searchCategory">SearchByCategory</button>
+    </div>
+    </div>
+    <div class="deleteall">
+
+    </div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Taxes</th>
+            <th>Ads</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>Category</th>
+            <th>Count</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+        </tr>   
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+</div>
+ <div class="emptyinputs">
+     <p><i class="fa-solid fa-triangle-exclamation"></i> You Should Enter All Details..</p>
+ </div>
+    <script src="js/all.min.js"></script>
+    <script src="js/CRUD.js"></script>
+</body>
+</html>
